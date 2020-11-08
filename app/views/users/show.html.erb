@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p><strong>Name:</strong><%= @user.name %></p>
+
+	<% @user.images.each do |image| %>
+	<div>
+		<div><%= image_tag(image, width: '150px') %></div>
+		<div>ファイル形式　：<%= image.content_type %></div>
+		<div>ファイルサイズ：<%= image.byte_size/1000 %>KB</div>
+	</div><br><br>
+	<% end %>
+
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
